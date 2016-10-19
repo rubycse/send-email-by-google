@@ -1,0 +1,23 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'idea'
+
+dependencies {
+    compile 'javax:javaee-api:7.0'
+    compile "org.springframework:spring-webmvc:4.2.5.RELEASE"
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
+    compile 'com.google.apis:google-api-services-gmail:v1-rev48-1.22.0'
+    compile 'jstl:jstl:1.2'
+}
+
+war {
+    baseName = 'send-email-by-google'
+}
+
+httpPort = 8090
